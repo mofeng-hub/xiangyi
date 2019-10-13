@@ -1,0 +1,159 @@
+*{
+  padding:0;
+  margin:0;
+}
+a{
+  text-decoration:none;
+}
+body{
+  font-family: '宋体';
+}
+/* header */
+header{
+  height:320px;
+  width:100%;
+  /* clear:both; */
+  /* position:relative; */
+}
+.lo{
+  width:960px;
+  margin:0 auto;
+  height:90px;
+}
+.logo{
+  height:90px;
+  clear:both;
+  position:absolute;
+  top:0;
+  width: 1031px;
+}
+.logoimg{
+  float:left;
+  margin-top: 21px;
+}
+.logo li{
+  float:left;
+  height:90px;
+  line-height:90px;
+  list-style:none;
+  margin-right:40px;
+}
+.abox{
+  color:black;
+  font-size:15px;
+  text-decoration:none;
+}
+.logo .logoBox{
+  margin-right:0;
+}
+.gouwubox{
+  margin-top: 5px;
+  float:left;
+}
+.cart{
+  height:40px;
+  line-height: 40px;
+  position: relative;
+  margin-top:20px;
+  width: 110px;
+}
+.cart:hover .hideCart{
+  display:block;
+}
+.cartLink {
+  display: block;
+  overflow: hidden;
+  color:black;
+  border-radius:8px;
+  border:1px solid #998585;
+  font-size:15px;
+}
+
+.cartLink span{
+  float:left;
+}
+.cartLink strong {
+  line-height: 40px;
+  float: left;
+}
+.cart .hideCart {
+  width: 312px;
+  background: #eccfcf;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: -40px;
+  display: none;
+}
+.cart .hideCart .loadLay {
+  height: 16px;
+  line-height: 16px;
+  padding: 20px 0;
+  text-align: center;
+}
+.loadBox{
+  position: relative;
+}
+.loadBox:hover{
+  display:block;
+}
+.load{
+  height:400px;
+  width:800px;
+  margin: 90px 231px;
+  position: absolute;
+}
+.loadLeft{
+  width: 245px;
+  float: left;
+  height: 230px;
+  border-right: 1px solid #958d8d;
+}
+.loadLeft h5,h5{
+  color:black;
+  font-size:18px;
+  padding-left: 10px;
+}
+.loadLeft p{
+  color:#828282;
+  font-size:16px;
+  margin: 15px auto;
+}
+.loadleft span{
+  color:#ff63cf;
+}
+.inputBox1{
+border-bottom:1px solid black;
+border-top: 0px;
+border-left: 0px;
+border-right: 0px;
+height:30px;
+width: 180px;
+}
+.inputBox2{
+  width:70px;
+  height:35px;
+  border-radius:25px;
+  color:white;
+  background:black;
+  margin-left: 50px;
+  margin-top:20px;
+}
+.loadRight{
+  width:288px;
+  float:left;
+}
+.loadRight span{
+  text-align:center;
+  padding: 17px;
+}
+.loadRight img{
+  width:40px;
+  margin: 13px;
+  margin-top: 25px;
+}
+.loadRight img:nth-child(1){
+  margin-left:15px;
+}
+
+/*# sourceMappingURL=demo.css.map */

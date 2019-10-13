@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/load.css">
+</head>
+<body>
+<div class="banner">
+    <div class="load">
+        <h2>注册成为会员</h2>
+        <div class="loadLeft">
+            <p>您的邮箱/手机<span>*</span></p>
+            <input type="text" id="username" name="username" onblur="checkpa(this)"><span></span>
+            <p>密码<span>*</span></p>
+            <input type="text"  id="pass" name="pass">
+            <p>重复密码<span>*</span></p>
+            <input type="text" id="checkpass" name="checkpass">
+            <p>手机<span>*</span></p>
+            <input type="text"  id="tel" name="tel">
+            <p><input type="radio">我同意依照本使用条款和隐私政策对我的个人信息进行收集和使用，我已阅读并确认被给予充分机会理解该使用条款和隐私政策的内容。</p><br>                
+        </div>
+        <div class="loadRight">
+            <p>用户名<span>*</span></p>
+            <input type="text">
+            <p>确认密码<span>*</span></p>
+            <input type="text">
+            <p>短信验证码<span>*</span></p>
+            <input type="text"><br>
+            <input type="button" value="获取短信验证码" class="btn">     
+            <input type="button" value="登录" class="btn">           
+        </div>  
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+function check(){
+    if($("#username").value=="" || $("#pass").value=="" || $("#checkpass").value==""){
+        alert("请将带有星号的填全");
+        return false;
+    }
+    if($("#pass").value != $("#checkpass").value){
+        alert("密码和重复密码不一致，请重新输入");
+        return false;
+    }
+}
+//提醒用户输入的用户名是否存在
+function checkpa(obj){
+    let zxx=new XMLHttpRequest();
+    zxx.open("post","checkpa.php?username="+$("#username").value,true);
+    zxx.onreadystatechange=function(){
+        if(zxx.readyState==4 && zxx.status==200){
+            obj.nextElementSibling.innerHTML=zxx.responseText;
+        }
+    }
+    zxx.send();
+}
+
+
+function $(str){
+    if(str.charAt(0)=="#"){
+        return document.getElementById(str.substring(1));
+    }else if(str.charAt(0)=="."){
+        return document.getElementsByClassName(str.substring(1));
+    }else{
+        return document.getElementsByTagName(str);
+    }
+}
+</script>
