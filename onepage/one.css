@@ -10,10 +10,8 @@ body{
 }
 /* header */
 header{
-    height:320px;
     width:100%;
-    /* clear:both; */
-    /* position:relative; */
+    height: 760px;
 }
 .lo{
     width:960px;
@@ -155,9 +153,26 @@ width: 180px;
 .loadRight img:nth-child(1){
     margin-left:15px;
 }
+.videoBox{
+    height:400px;
+    width:1349px;
+    margin: 0 auto;
+    position:relative;
+}
+video{
+    height:400px;
+    width:1349px;
+}
+.videoBox2{
+    height:100px;
+    background:green;
+    position:absolute;
+    width:1349px;
+    top:660px;
+}
 /* banner */
  .banner{
-    width:100%;
+    width: 100%;
 }
 .bannerImg{
     height:480px;
