@@ -1,0 +1,54 @@
+@charset "utf-8";   
+
+.banner{
+    width:100%;
+    height:470px;
+    .load{
+        width:600px;
+        height:400px;
+        margin:auto;
+        background: url(../img/15.png) right top;
+        background-repeat: no-repeat;
+        margin-top:100px;
+        padding-left: 50px;
+        padding-top: 20px;
+        box-shadow: 4px 6px 25px -10px;
+        h2{
+            font-size:25px;
+        }
+        p{
+            color:#98a2ab;
+            margin: 15px;
+            span{
+                color:red;
+            }
+        }
+        input{
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+        }
+    }
+}
+#pass{
+    width:65px;
+    span{
+      width:80px;
+      height:40px;
+      border:1px solid #98a2ab; 
+
+      color:#98a2ab;
+    }
+}
+#btn{
+    width: 90px;
+    height: 40px; 
+    background: #abe2b3;
+}
+#btnLogin{
+    width: 70px;
+    height: 40px;
+    margin-top: 20px;
+    background: #abe2b3;
+    margin-left:55px;
+}

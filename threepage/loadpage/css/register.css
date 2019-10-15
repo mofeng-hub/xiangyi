@@ -1,0 +1,49 @@
+.banner {
+    width: 100%;
+    height: 470px; 
+}
+    .load {
+      width: 600px;
+      height: 560px;
+      margin: auto;
+      background: url(../img/15.png) right top;
+      background-repeat: no-repeat;
+      margin-top: 30px;
+      padding-left: 50px;
+      padding-top: 20px;
+      box-shadow: 4px 6px 25px -10px;
+     }
+.load h2 {
+        font-size: 25px; 
+    }
+      .banner .load p {
+        color: #98a2ab;
+        margin: 15px;
+     }
+        .banner .load p span {
+          color: red; 
+        }
+      .banner .load input {
+        width: 200px;
+        height: 30px;
+        border-radius: 5px;
+     }
+
+
+.pBox{
+    display:inline;
+}
+#radio{
+    width: 12px;
+    height: 12px;
+    margin-top: 15px;
+}
+  #btnReg {
+    width: 90px;
+    height: 45px;
+    margin-top: 20px;
+    background: #abe2b3;
+    margin-left: 55px; 
+}
+
+  

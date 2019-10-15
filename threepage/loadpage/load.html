@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/load.css">
+</head>
+<body>
+<div class="banner">
+    <div class="load">
+        <h2>欢迎登录</h2>
+        <p>用户名<span>*</span></p>
+        <input type="text" id="username">
+        <p>密码<span>*</span></p>
+        <input type="text"  id="userpass" >
+        <p>验证码<span>*</span></p>
+        <input type="text"  id="pass" onclick="check()"><span id="ma"></span>
+        <input type="button" value="验证码" onclick="testf()" id="btn"/>
+        <br>
+        <input type="button" value="登录" id="btnLogin" > 
+        <div id="messageBox">
+        </div>
+     </div>
+</div>
+</body>
+</html>
+<script src="js/cookieTools.js"></script>
+<script>
+function check(){
+    if($("#username").value=="" || $("#userpass").value==""  || $("#pass").value==""  ){
+        alert("请将带有*的填全");
+        return false;
+    }
+}
+//提醒用户输入的用户名是否存在
+$("#btnLogin").onclick = function(){
+    //1、
+    let xhr = new XMLHttpRequest();
+    xhr.open("post","loginCheck.php",true);
+
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            if(xhr.responseText=="1"){
+                addCookie("username",$("#username").value,7);
+                location.href="../three.html";
+            }else{
+                $("#messageBox").innerHTML = "亲，用户名或者密码不对";
+            }
+        }
+    }
+    //post方式：设置请求头
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    //post方式：把传给服务器端数据（键值对）放在send函数的参数里。
+    let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
+    xhr.send(sendstr);
+}
+
+function testf(){
+    var str="";
+    for(var i=0;i<4;i++){
+        str += parseInt(Math.random()*10);
+    }
+    document.getElementById("ma").innerHTML = str;
+}
+
+function $(str){
+    if(str.charAt(0)=="#"){
+        return document.getElementById(str.substring(1));
+    }else if(str.charAt(0)=="."){
+        return document.getElementsByClassName(str.substring(1));
+    }else{
+        return document.getElementsByTagName(str);
+    }
+}
+</script>

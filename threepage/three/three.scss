@@ -194,6 +194,7 @@
 .leiXing{
     margin: 60px auto;
     width: 845px;
+    height:30px;
     .left{
         border-bottom:1px solid gray;
         width:145px;
@@ -225,21 +226,47 @@
         img{
             width:215px;
             height:210px;
+            background-color:#f4f4f4;
         }
         p{
-            color:#3e3b56;
+            color:#4e444f;
             font-size:20px;
             margin-top:25px;
-            margin-bottom:20px;
-        }
-        p{
-            color:#5d5b5e;
-            font-size:18px;
-            margin-bottom:70px;
         }
     }
 }
-
+#leftP{
+  color:#aba7a8;
+  font-size:13px;
+}
+.boxZuo{
+    width: 140px;
+    height: 40px;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border: 1px solid gray;
+    div{
+        width: 140px;
+        height: 40px;
+        position: absolute;
+        // background:#272525;
+        p{
+            width: 140px;
+            height: 40px;
+            position: absolute;
+            left:-140px;
+            transition: all -0.2s .5s;
+            background:white;
+        }
+        span{
+          text-align:center;
+          font-size:15px;
+          line-height:15px;
+        }
+    }
+}
 /* footer */
 footer{
     width:100%;

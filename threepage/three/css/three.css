@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 * {
   padding: 0;
@@ -12,10 +13,7 @@ body {
 /* header */
 header {
   width: 100%;
-  height: 90px;
-  position: fixed;
-  background: white;
-  top: 0px; }
+  height: 90px; }
 
 .lo {
   width: 960px;
@@ -154,159 +152,92 @@ header {
 .loadRight img:nth-child(1) {
   margin-left: 15px; }
 
-.banner {
-  width: 100%;
-  margin-top: 90px; }
-  .banner .ban {
-    margin: 0 auto;
-    height: 320px;
-    width: 1349px; }
-    .banner .ban img {
-      height: 320px;
-      width: 1349px; }
-    .banner .ban div {
-      width: 1000px;
-      position: fixed;
-      top: 410px;
-      margin: -25px 165px;
-      position: absolute;
-      background: #044d3c; }
-      .banner .ban div ul {
-        list-style: none;
-        float: left;
-        margin-left: 80px; }
-        .banner .ban div ul li {
-          font-size: 16px;
-          margin-right: 35px;
-          float: left;
-          line-height: 50px; }
-          .banner .ban div ul li a {
-            color: white; }
-
-.leiXing {
-  margin: 60px auto;
-  width: 845px; }
-  .leiXing .left {
-    border-bottom: 1px solid gray;
-    width: 145px;
-    height: 30px;
-    float: left;
-    margin-right: 50px; }
-    .leiXing .left span {
-      color: #373644;
-      font-size: 18px;
-      padding-left: 15px; }
-    .leiXing .left img {
-      width: 15px;
-      height: 15px;
-      padding-left: 10px; }
-  .leiXing .leftBox {
-    margin-right: 305px; }
-
-.leftImg {
-  height: 845px;
-  margin: 0 auto;
-  width: 1000px; }
-  .leftImg .box {
-    width: 215px;
-    height: 385px; }
-    .leftImg .box img {
-      width: 215px;
-      height: 210px; }
-    .leftImg .box p {
-      color: #3e3b56;
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 20px; }
-    .leftImg .box p {
-      color: #5d5b5e;
-      font-size: 18px;
-      margin-bottom: 70px; }
+/* banner */  
 
 /* footer */
 footer {
-  width: 100%;
-  background: #044d3c; }
-
-.foot {
-  height: 347px;
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 60px;
-  margin-top: 100px; }
-
-.footimg {
-  width: 90px;
-  height: 48px;
-  float: left; }
-
-.foot1 {
-  margin-left: 100px;
-  width: 445px;
-  float: left; }
-
-.foot1box {
-  margin-bottom: 23px;
-  color: white;
-  font-size: 20px; }
-
-.foot1 span {
-  color: #73afa3;
-  font-size: 15px;
-  float: left;
-  margin-right: 106px;
-  margin-bottom: 27px; }
-
-.foot .footspan1 {
-  display: block;
-  height: 205px;
-  margin-right: 80px; }
-
-.foot .fbox {
-  margin-right: 74px; }
-
-.foot2 {
-  float: left;
-  width: 315px;
-  height: 240px;
-  border-right: 1px solid #186150; }
-
-.foot2 img {
-  margin-right: 23px;
-  width: 26px;
-  height: 26px; }
-
-.foot2 span {
-  color: #73afa3;
-  font-size: 15px; }
-
-.foot2box {
-  margin-top: 24px;
-  margin-bottom: 24px; }
-
-.foot3 {
-  width: 154px;
-  height: 200px;
-  float: left;
-  text-align: center;
-  margin-left: 90px; }
-
-.foot3 img {
-  width: 102px;
-  height: 102px; }
-
-.foot3box {
-  color: #bde1dd;
-  font-size: 13px;
-  margin-top: 17px; }
-
-.foot4 {
-  text-align: center;
-  font-size: 14px;
-  height: 57px;
-  line-height: 57px;
-  color: #73afa3;
-  clear: both;
-  border-top: 1px solid #0f5847; }
-
-/*# sourceMappingURL=three.css.map */
+        width: 100%;
+        background: #044d3c; }
+      
+      .foot {
+        height: 347px;
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 60px;
+        margin-top: 100px; }
+      
+      .footimg {
+        width: 90px;
+        height: 48px;
+        float: left; }
+      
+      .foot1 {
+        margin-left: 100px;
+        width: 445px;
+        float: left; }
+      
+      .foot1box {
+        margin-bottom: 23px;
+        color: white;
+        font-size: 20px; }
+      
+      .foot1 span {
+        color: #73afa3;
+        font-size: 15px;
+        float: left;
+        margin-right: 106px;
+        margin-bottom: 27px; }
+      
+      .foot .footspan1 {
+        display: block;
+        height: 205px;
+        margin-right: 80px; }
+      
+      .foot .fbox {
+        margin-right: 74px; }
+      
+      .foot2 {
+        float: left;
+        width: 315px;
+        height: 240px;
+        border-right: 1px solid #186150; }
+      
+      .foot2 img {
+        margin-right: 23px;
+        width: 26px;
+        height: 26px; }
+      
+      .foot2 span {
+        color: #73afa3;
+        font-size: 15px; }
+      
+      .foot2box {
+        margin-top: 24px;
+        margin-bottom: 24px; }
+      
+      .foot3 {
+        width: 154px;
+        height: 200px;
+        float: left;
+        text-align: center;
+        margin-left: 90px; }
+      
+      .foot3 img {
+        width: 102px;
+        height: 102px; }
+      
+      .foot3box {
+        color: #bde1dd;
+        font-size: 13px;
+        margin-top: 17px; }
+      
+      .foot4 {
+        text-align: center;
+        font-size: 14px;
+        height: 57px;
+        line-height: 57px;
+        color: #73afa3;
+        clear: both;
+        border-top: 1px solid #0f5847; }
+      
+      /*# sourceMappingURL=three.css.map */

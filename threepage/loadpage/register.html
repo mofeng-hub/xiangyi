@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<div class="banner">
+    <div class="load">
+        <h2>会员注册</h2>
+        <p>用户名<span>*</span></p>
+        <input type="text" id="username" onblur="checkuser(this)"  onclick="check()">
+        <p>密码<span>*</span></p>
+        <input type="text" id="userpass"><br>
+        <p>重复密码<span>*</span></p>
+        <input type="text" id="checkpass" ><br>
+        <p>手机<span>*</span></p>
+        <input type="text"  id="tel" name="tel"><br>
+        <input type="radio" id="radio"><p class="pBox">我同意依照本使用条款和隐私政策对我的个人信息进行收集和使用，我已阅读并确认被给予充分机会理解该使用条款和隐私政策的内容。</p><br>
+        <input type="button"   value="注册"  id="btnReg">     
+          <span id="messageBox"></span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
+<script>
+$("#btnReg").onclick = function(){
+    let xhr = new XMLHttpRequest();
+    xhr.open("post","regSave.php",true);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            if(xhr.responseText=="-1"){
+                $("#messageBox").style.color ="red";
+                $("#messageBox").innerHTML ="用户名被人使用";
+            }else if(xhr.responseText=="0"){
+                $("#messageBox").style.color ="red";
+                $("#messageBox").innerHTML ="注册失败";
+            }else if(xhr.responseText=="1"){
+                $("#messageBox").style.color ="greenyellow";
+                $("#messageBox").innerHTML ="注册成功，请<a href='load.html'>登录</a>";
+            }
+        }
+    }
+    //post方式：设置请求头
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    //post方式：把传给服务器端数据（键值对）放在send函数的参数里。
+    let sendstr = `username=${$("#username").value}&userpass=${$("#userpass").value}`;
+    xhr.send(sendstr);
+
+}
+
+function checkuser(obj){
+    let xhr =new XMLHttpRequest();
+    //2 设置请求参数
+    xhr.open("get","checkuser.php?username="+$("#username").value,true);
+    //3 设置回调函数
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            //5 接收请求
+            obj.nextElementSibling.innerHTML =  xhr.responseText;
+        }
+    }
+    //4 发送请求
+    xhr.send();
+
+
+
+
+}
+
+    //判断用户名是否符合规则
+
+
+
+
+    //判断密码和重复密码是否一致。
+  function check(){
+    if($("#username").value=="" || $("#userpass").value=="" || $("#checkpass").value=="" || $("#tel").value=="" ){
+        alert("请将带有*的填全");
+        return false;
+    }
+    if($("#userpass").value != $("#checkpass").value){
+        alert("密码和重复密码不一致，请重新输入");
+        return false;
+    }
+}
+
+
+function $(str){
+	if(str.charAt(0)=="#"){
+		return document.getElementById(str.substring(1));
+	}else if(str.charAt(0)=="."){
+		return document.getElementsByClassName(str.substring(1));
+	}else{
+		return document.getElementsByTagName(str);
+	}
+}	
+
+</script>
