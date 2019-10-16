@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:140px;
+            height:40px;
+        }
+.bgDiv{
+    width: 140px;
+    height: 40px;
+    position: absolute;
+    background:#272525;
+}
+.word{
+    width: 140px;
+    height: 40px;
+    position: absolute;
+    left: -132px;
+    transition: all -0.2s .5s;
+    background: white;
+    top: -9px;
+}
+.box .sp{
+    color:white;
+}
+
+.box span{
+    position: absolute;
+    color: white;
+    line-height: 40px;
+    height: 40px;
+    margin-left: 40px;
+}
+.box:hover .sp{
+    color:white;
+}
+.box:hover .bgDiv{
+    left: 0;
+}
+.box:hover .word{
+    right: 0;
+}
+.box:hover span{
+    color:black;
+}
+    </style>
+</head>
+<body>
+    <a href="../onepage/one.html">
+        <div class="box">
+            <div class="bgDiv"></div>
+            <p class="word"></p>
+            <span class="sp">了解更多</span>
+        </div></a>
+</body>
+</html>
