@@ -106,6 +106,7 @@
 // banner
 .banner{
     width:100%;
+    height:900px;
     margin-top: 90px;
 }
 .leiXing{
@@ -124,7 +125,7 @@
             line-height: 30px;
             position:relative;
             span{
-                color:#373644;
+                color:#77a3a1;
                 font-size:14px;
                 display: block;
                 margin-left: 20px;
@@ -168,7 +169,15 @@
                   position: absolute;
                   left:-36px;
                   transition: all -0.2s .5s;
-                  background:white;
+                  background:gray;
+                  span{
+                    text-align: center;
+                    font-size: 12px;
+                    line-height: 20px;
+                    margin-left: 6px;
+                    margin-bottom:10px;
+                    color:#3e4146;
+                  }
               }
               span{
                 text-align: center;
@@ -191,9 +200,7 @@
 .left:hover{
   background:#044d3c;
 }
-.lei .left:hover span{
-  color:white;
-}
+
 .lei .left:hover img{
   background:url(../img/xshang.png) 120px 0px;
 }
@@ -203,15 +210,17 @@
 .bottom .botBox:hover div{
     right: 0;
 }
-.bottom .botBox:hover p{
+.lei .bottom .botBox:hover p{
     background:gray;
     left: 0;
 }
-.bottom .botBox:hover span{
- color:white;
+
+.lei .bottom .botBox:hover span{
+  color:white;
 }
+
+
 .leftImg{
-    height: 1650px;
     margin: 0 auto;
     width: 780px;
     .box{
@@ -248,44 +257,45 @@
         width: 60px;
         height: 25px;
         position: absolute;
+        background: white;
     }
     .word{
         width: 60px;
         height: 25px;
         position: absolute;
         left:-60px;
-        transition: all -0.2s .5s;
-        background:white;
+        transition:all -0.3s 0.4s;
+        background:gray;
         top: -20px;
         span{
-          text-align: center;
           font-size: 12px;
           line-height: 25px;
           margin-left: 6px;
-          color:#3e4146;
+          color:black;
           width: 60px;
-        height: 25px;
+          height: 25px;
+          position: absolute;
         }
     }
     span{
-      text-align: center;
       font-size: 12px;
       line-height: 25px;
       margin-left: 6px;
       color:black;
+      width: 60px;
+      height: 25px;
+      position: absolute;
     }
 }
 
 .boxZuo:hover div{
   right: 0;
 }
-
 .boxZuo:hover .word{
-  background:gray;
   left: 0;
 }
-.word:hover span{
-  color:red;
+.boxZuo:hover span {
+  color: white;
 }
 
 
@@ -315,6 +325,33 @@
       }
   }
 }
+
+.pageBox{
+  margin:0 auto;
+  width:300px;
+  .pag{
+    width:300px;
+    height:50px;
+    ul{
+        width: 400px;
+        height: 50px;
+        text-align: center;
+        list-style: none;
+        li{
+            color: black;
+            font-size: 16px;
+            float: left;
+            width: 60px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid gray;
+            margin-right: 15px;
+            line-height: 30px;
+      }
+    }
+  }
+}
+
 /* footer */
 footer{
     width:100%;
@@ -401,3 +438,5 @@ footer{
     clear:both;
     border-top:1px solid #0f5847;
   }
+
+
