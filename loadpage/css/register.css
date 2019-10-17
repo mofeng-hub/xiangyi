@@ -1,49 +1,46 @@
-.banner {
-    width: 100%;
-    height: 470px; 
+ table {
+	text-align:center;
+  margin-top:5%;
+  border:1px solid gray;
+  background:url(../img/15.png)right top;
+  background-repeat:no-repeat;
+  width:650px;
+  height:530px;
+  box-shadow: 1px 1px 6px -2px
 }
-    .load {
-      width: 600px;
-      height: 560px;
-      margin: auto;
-      background: url(../img/15.png) right top;
-      background-repeat: no-repeat;
-      margin-top: 30px;
-      padding-left: 50px;
-      padding-top: 20px;
-      box-shadow: 4px 6px 25px -10px;
-     }
-.load h2 {
-        font-size: 25px; 
-    }
-      .banner .load p {
-        color: #98a2ab;
-        margin: 15px;
-     }
-        .banner .load p span {
-          color: red; 
-        }
-      .banner .load input {
-        width: 200px;
-        height: 30px;
-        border-radius: 5px;
-     }
-
-
-.pBox{
-    display:inline;
+.y_span {
+	color:#9C9A9A;
 }
-#radio{
-    width: 12px;
-    height: 12px;
-    margin-top: 15px;
+.r_span {
+	color:red;
 }
-  #btnReg {
-    width: 90px;
-    height: 45px;
-    margin-top: 20px;
-    background: #abe2b3;
-    margin-left: 55px; 
+.g_span {
+	color:green;
 }
-
-  
+input{
+  border-radius:10px;
+  width:150px;
+  height:30px;
+}
+td{
+  font-size:16px;
+  color:black;
+}
+#sex{
+  width:20px;
+  height:20px;
+  float:left;
+}
+span{
+  float:left;
+  font-size:16px;
+}
+tr{
+  float:left;
+  margin-top:20px;
+  margin-left:20px;
+  width: 630px;
+}
+#btn{
+  width:100px;
+}

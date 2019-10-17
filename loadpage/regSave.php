@@ -4,6 +4,12 @@
 
     $username = $_POST['username'];
     $userpass = $_POST['userpass'];
+    $checkpass = $_POST['checkpass'];
+    $sex = $_POST['sex'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $birthday = $_POST['birthday'];
+
 
     //2、处理
      //1)、链接数据库(搭桥)
@@ -26,7 +32,7 @@
             mysql_close($conn);
             echo "-1";//用户名被使用
         }else{
-            $sqlstr="insert into students(username,userpass) values('$username','$userpass')";
+            $sqlstr="insert into students(username,userpass,checkpass,sex,email,phone,birthday) values('$username','$userpass','checkpass','sex','email','phone','birthday')";
             $result = mysql_query( $sqlstr,$conn);
             //4)、关闭数据库
             mysql_close($conn);
