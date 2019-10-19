@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+ * {
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+* {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.left {
+	width:800px;
+	height:600px;
+	margin:200px auto;
+	position:relative;
+	overflow:hidden;
+}
+.box {
+	width:500px;
+	height:450px;
+	position:relative;
+	left:150px;
+}
+.box li {
+	position:absolute;
+	top:0;
+	left:0;
+}
+.leftImg {
+	position:absolute;
+	bottom:10px;
+	height:100px;
+	left:150px;
+}
+.box li,.box img {
+	width:500px;
+	height:450px;
+}
+.leftImg li,.leftImg img {
+	width:100px;
+	height:100px;
+}
+.leftImg li {
+	float:left;
+	margin-right:10px;
+}
+.box:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+.active {
+	border:2px solid red;
+}
+.next,.pre {
+	position:absolute;
+	font-size:20px;
+	top:250px;
+}
+.next {
+	right:30px;
+}
+
+
+
+    </style>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script> 
+</head>
+<body>
+        <!-- <div class="left">
+                <ul id="box">
+                    <img src="img/11.jpg" alt="">
+                    <img src="img/12.jpg">
+                    <img src="img/13.jpg">
+                    <img src="img/14.jpg">
+                    <img src="img/15.jpg">
+                </div>
+                <div class="leftImg">
+                    <img src="img/11.jpg">
+                    <img src="img/12.jpg">
+                    <img src="img/13.jpg">
+                    <img src="img/14.jpg">
+                    <img src="img/15.jpg">
+                </div>        
+            </div> -->
+         <div class="left">
+                <ul class="box">
+                    <li><img src="img/11.jpg" alt=""></li>
+                    <li><img src="img/12.jpg"></li>
+                    <li><img src="img/13.jpg"></li>
+                </ul>
+                <ol class="leftImg">
+                    <li><img src="img/11.jpg" alt=""></li>
+                    <li><img src="img/12.jpg"></li>
+                    <li><img src="img/13.jpg"></li>
+                </ol>
+            </div> 
+</body>
+</html>
+<script>
+$(function() {
+    var timer;
+    var iNow = 0;
+    fnFade();
+    function autoPlay() {
+        timer = setInterval(function() {
+            iNow++;
+            iNow %= $('.box li').length;
+            fnFade();
+        }, 2000)
+    }
+    $('.leftImg li').hover(function() {
+        iNow = $(this).index();
+        fnFade();
+    })
+    function fnFade() {
+        $('.box li').each(function(index) {
+            if (index != iNow) {
+                $('.box li').eq(index).fadeOut().css('zIndex', 1);
+                $('.leftImg li').eq(index).attr('class', '')
+            } else {
+                $('.box li').eq(index).fadeIn().css('zIndex', 2);
+                $('.leftImg li').eq(index).attr('class', 'active')
+            }
+        })
+    }
+})	
+</script>

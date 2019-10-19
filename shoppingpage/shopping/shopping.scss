@@ -5,10 +5,10 @@
   }
   a{
     text-decoration:none;
+    color: gray;
   }
   body{
     font-family: '宋体';
-    height:2500px; padding:0; margin:0;
   }
 //   header
 header{
@@ -16,34 +16,62 @@ header{
     background:pink;
 }
 // banner
+
 .banner{
     width:100%;
 }
 .ban{
-    width:1100px;
+    width:1200px;
     height:650px;
-    margin:0 auto;
+    margin:40px auto;
     .left{
         width:430px;
         height:540px;
         float:left;
-        img{
-            height: 400px;
+        position:relative;
+        overflow:hidden;
+        #box{
             width: 370px;
+            height: 400px;
+            background-image:url(../img/img11.jpg);
+            background-size: 400px 300px;
+            position:relative;
+             li {
+                position:absolute;
+                top:0;
+                left:0;
+                height: 400px;
+                width: 370px;
+                img{
+                    height: 400px;
+                    width: 370px;
+                }
+            }
         }
         .leftImg{
             width: 370px;
-            img{
-                margin:30px auto;
-                width:60px;
-                height:70px;
-                margin-right:7px;
+            position:absolute;
+            bottom:10px;
+	        height:100px;
+            left:150px;
+             li {
+                float:left;
+                margin-right:10px;
+                width:100px;
+                height:100px;
+                img{
+                    margin:30px auto;
+                    width:60px;
+                    height:70px;
+                    margin-right:7px;
+                }
             }
         }
     }
     .center{
         width:430px;
         float:left;
+        margin: 0px 50px;
         h3{
             color:black;
             font-size:22px;
@@ -167,26 +195,143 @@ header{
     float: left;
 }
 .active{
-    border:1px solid #c3c1c2;
-    width:720px;
-    height:240px;
+    width:960px;
+    height:390px;
     margin:20px auto;
     table{
-        width:500px;
+        width:960px;
+        border:1px solid #c3c1c2;
+    }
+    h2{
+        color:black;
+        box-shadow: 0px 1px 10px 0px;
+        height: 50px;
+        line-height: 50px;
+    
     }
     p{
-        font-size:18px;
-        color: #ff0037;
+        height: 40px;
+        font-size: 13px;
+        color: #9b3047;
+        margin-top: 20px;
+        background: #f0d8dc;
+        line-height: 40px;
     }
 }
 tr{
     width:200px;
-    height:30px;
-    th{
-        color:black;
-    }
+    height:40px;
     td{
         text-align:left;
-        color:#c3c1c2;
+        color:#9e9399;
+        font-size: 16px;
     }
+}
+.live{
+    width: 1100px;
+    margin: 0 auto;
+    font-size:25px;
+    color:white;
+    height:50px;
+    padding-left: 60px;
+    line-height:50px;
+    background:#9b3047;
+}
+.rightB{
+    width:1100px;
+    height: 880px;
+    margin:20px auto;
+    .content{
+        width: 326px;
+        height: 370px;
+        margin:20px;
+        float:left;
+        position:relative;
+        img{
+            width:326px;
+            height:370px;
+            position:absolute;
+            left:0;
+            top:0;
+        }	
+        .box2{
+            width:326px;
+            height:320px;
+            background:gray;
+            position:absolute;
+            display:none;
+            left:0;
+            top:0;
+            opacity:0.3;
+        }
+        p{
+            width:326px;
+            line-height:50px;
+            text-indent:18px;
+            position:absolute;
+            left:0;
+            bottom:0;
+            font-size: 25px;
+            font-weight: bold;
+            box-shadow: 1px 1px 5px 0px;
+            color: #ff0037;
+        }
+    }
+}
+.content:hover .box2{
+    display:block;
+}
+.content:hover p{
+    display:block;
+}
+footer{
+    width:100%;
+    height:370px;
+    .foot{
+        padding-top: 40px;
+        height: 130px;
+        margin:0 auto;
+        width:1200px;
+        border-top: 1px solid gray;
+        div{
+            width:300px;
+            float:left;
+            img{
+                float:left;
+                height: 80px;
+            }
+            h3{
+                font-size:20px;
+                color:black;
+                line-height: 40px;
+                margin-left: 90px;
+            }
+            span{
+                font-size:15px;
+                color:#8d8d8d;
+                margin-left: 15px;
+                line-height: 40px;
+            }
+        }
+    }
+    table{
+        width:1200px;
+        margin:0 auto;
+        border-top: 1px solid gray;
+        padding: 30px 0px;
+        tr{
+            text-align:center;
+            th{
+                font-size:18px;
+                color:#585b62;
+            }
+            td{
+                color:#909090;
+                text-align: center;
+            }
+        }
+    }
+}
+footer table:hover a{
+    display:block;
 }
