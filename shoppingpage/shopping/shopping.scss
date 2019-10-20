@@ -16,7 +16,17 @@ header{
     background:pink;
 }
 // banner
-
+.hoverbox {
+	display:none;
+	position:absolute;
+	top:0;
+	background:#09f;
+	border:1px solid #09f;
+	height:75px;
+	width:100px;
+	cursor:move;
+	z-index:10;
+}
 .banner{
     width:100%;
 }
@@ -29,43 +39,34 @@ header{
         height:540px;
         float:left;
         position:relative;
-        overflow:hidden;
         #box{
             width: 370px;
             height: 400px;
-            background-image:url(../img/img11.jpg);
             background-size: 400px 300px;
             position:relative;
-             li {
-                position:absolute;
-                top:0;
-                left:0;
-                height: 400px;
-                width: 370px;
+            border:1px solid #000;
                 img{
                     height: 400px;
                     width: 370px;
+                    vertical-align:top;
                 }
-            }
         }
         .leftImg{
             width: 370px;
             position:absolute;
-            bottom:10px;
 	        height:100px;
-            left:150px;
-             li {
-                float:left;
-                margin-right:10px;
-                width:100px;
-                height:100px;
+            overflow:hidden;
+            border:1px solid #ccc;
+            display:none;
+            left:403px;
+            top:0;
                 img{
                     margin:30px auto;
                     width:60px;
                     height:70px;
                     margin-right:7px;
+	                position:absolute;
                 }
-            }
         }
     }
     .center{

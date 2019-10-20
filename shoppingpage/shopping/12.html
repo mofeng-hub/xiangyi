@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    * {
-	margin:0;
-	padding:0;
-}
 * {
 	padding:0;
 	margin:0;
@@ -26,41 +22,63 @@
 	margin:200px auto;
 	position:relative;
 	overflow:hidden;
+	margin-left:100px;
 }
 .bigList {
 	width:500px;
 	height:450px;
 	position:relative;
 	left:150px;
-}
-.bigList li {
-	position:absolute;
-	top:0;
-	left:0;
+	border:1px solid #000;
 }
 .smallList {
 	position:absolute;
 	bottom:10px;
 	height:100px;
 	left:150px;
+	display:none;
+	top:0;
+	overflow:hidden;
+	border:1px solid #ccc;
 }
-.bigList li,.bigList img {
+.bigList img {
 	width:500px;
-	height:450px;
+    height:450px;
+    position:absolute;
+	top:0;
+	left:0;
+	vertical-align:top;
 }
-.smallList li,.smallList img {
+.smallList img {
 	width:100px;
-	height:100px;
-}
-.smallList li {
-	float:left;
+    height:100px;
+    float:left;
 	margin-right:10px;
+	position:absolute;
 }
 .bigList:after {
 	content:"";
 	display:block;
 	clear:both;
+
 }
+.hoverbox {
+	display:none;
+	position:absolute;
+	top:0;
+	background:#09f;
+	border:1px solid #09f;
+	height:75px;
+	width:100px;
+	cursor:move;
+	z-index:10;
+}
+
+
+
+
+
+
 .active {
 	border:2px solid red;
 }
@@ -72,27 +90,22 @@
 .next {
 	right:30px;
 }
-
-	
-	
-
-
     </style>
     <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script> 
 </head>
 <body>
-
         <div class="wrap">
-                <ul class="bigList">
-                    <li><img src="http://www.jq22.com/img/cs/500x300-1.png" alt=""></li>
-                    <li><img src="http://www.jq22.com/img/cs/500x500-1.png" alt=""></li>
-                    <li><img src="http://www.jq22.com/img/cs/500x500-2.png" alt=""></li>
-                </ul>
-                <ol class="smallList">
-                    <li><img src="http://www.jq22.com/img/cs/500x300-1.png" alt=""></li>
-                    <li><img src="http://www.jq22.com/img/cs/500x500-1.png" alt=""></li>
-                    <li><img src="http://www.jq22.com/img/cs/500x500-2.png" alt=""></li>
-                </ol>
+                <div class="bigList">
+                    <img src="http://www.jq22.com/img/cs/500x300-1.png" alt="">
+                    <img src="http://www.jq22.com/img/cs/500x500-1.png" alt="">
+                    <img src="http://www.jq22.com/img/cs/500x500-2.png" alt="">
+                    <div class="hoverbox"></div>
+                </div>
+                <div class="smallList">
+                    <img src="http://www.jq22.com/img/cs/500x300-1.png" alt="">
+                    <img src="http://www.jq22.com/img/cs/500x500-1.png" alt="">
+                    <img src="http://www.jq22.com/img/cs/500x500-2.png" alt="">
+                </div>
                 <span class="next">&gt;</span>
                 <span class="pre">&lt;</span>
             </div>
@@ -106,11 +119,11 @@ $(function() {
     function autoPlay() {
         timer = setInterval(function() {
             iNow++;
-            iNow %= $('.bigList li').length;
+            iNow %= $('.bigList img').length;
             fnFade();
         }, 2000)
     }
-    $('.smallList li').hover(function() {
+    $('.smallList img').hover(function() {
         iNow = $(this).index();
         fnFade();
     })
@@ -130,15 +143,79 @@ $(function() {
     // })
 
     function fnFade() {
-        $('.bigList li').each(function(index) {
+        $('.bigList img').each(function(index) {
             if (index != iNow) {
-                $('.bigList li').eq(index).fadeOut().css('zIndex', 1);
-                $('.smallList li').eq(index).attr('class', '')
+                $('.bigList img').eq(index).fadeOut().css('zIndex', 1);
+                $('.smallList img').eq(index).attr('class', '')
             } else {
-                $('.bigList li').eq(index).fadeIn().css('zIndex', 2);
-                $('.smallList li').eq(index).attr('class', 'active')
+                $('.bigList img').eq(index).fadeIn().css('zIndex', 2);
+                $('.smallList img').eq(index).attr('class', 'active')
             }
         })
     }
 })	
 </script>
+<script>
+        function Zoom(wrap, hoverbox, l, t, x, y, h_w, h_h, smallList) {
+            var moveX = x - l - (h_w / 2);
+            //鼠标区域距离
+            var moveY = y - t - (h_h / 2);
+            //鼠标区域距离
+            if (moveX < 0) {
+                moveX = 0
+            }
+            if (moveY < 0) {
+                moveY = 0
+            }
+            if (moveX > wrap.width() - h_w) {
+                moveX = wrap.width() - h_w
+            }
+            if (moveY > wrap.height() - h_h) {
+                moveY = wrap.height() - h_h
+            }
+            //判断鼠标使其不跑出图片框
+            var zoomX = smallList.width() / wrap.width()
+            //求图片比例
+            var zoomY = smallList.height() / wrap.height()
+        
+            smallList.css({
+                left: -(moveX * zoomX),
+                top: -(moveY * zoomY)
+            })
+            hoverbox.css({
+                left: moveX,
+                top: moveY
+            })
+            //确定位置
+        
+        }
+        
+        function Zoomhover(wrap, hoverbox, smallList) {
+            var l = wrap.offset().left;
+            var t = wrap.offset().top;
+            var w = hoverbox.width();
+            var h = hoverbox.height();
+            var time;
+            $(".biglist img,.hoverbox").mouseover(function(e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                $(".hoverbox,.smallList").show();
+                hoverbox.css("opacity", "0.3")
+                time = setTimeout(function() {
+                    Zoom(wrap, hoverbox, l, t, x, y, w, h, smallList)
+                }, 1)
+            }).mousemove(function(e) {
+                var x = e.pageX;
+                var y = e.pageY;
+                time = setTimeout(function() {
+                    Zoom(wrap, hoverbox, l, t, x, y, w, h, smallList)
+                }, 1)
+            }).mouseout(function() {
+                smallList.parent().hide()
+                hoverbox.hide();
+            })
+        }
+        $(function() {
+            Zoomhover($(".biglist img"), $(".hoverbox"), $(".smallList img"));
+        })
+        </script>
